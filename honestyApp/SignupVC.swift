@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpController: UIViewController {
+class SignUpController: UIViewController, UITextFieldDelegate {
 	
 	let emailLabel: UILabel = {
 		let label = UILabel()
@@ -17,10 +17,11 @@ class SignUpController: UIViewController {
 		label.sizeToFit()
 		return label
 	}()
-	let emailTextField: UITextField = {
+	lazy var emailTextField: UITextField = {
 		let tf = UITextField()
 		tf.placeholder = "name@domain.com"
 		tf.font = UIFont.boldSystemFont(ofSize: 24)
+		tf.delegate = self
 		return tf
 	}()
 	let usernameLabel: UILabel = {
@@ -30,10 +31,11 @@ class SignUpController: UIViewController {
 		label.sizeToFit()
 		return label
 	}()
-	let usernameTextField: UITextField = {
+	lazy var usernameTextField: UITextField = {
 		let tf = UITextField()
 		tf.placeholder = "@ yourusername"
 		tf.font = UIFont.boldSystemFont(ofSize: 24)
+		tf.delegate = self
 		return tf
 	}()
 	let passwordLabel: UILabel = {
@@ -43,34 +45,36 @@ class SignUpController: UIViewController {
 		label.sizeToFit()
 		return label
 	}()
-	let passwordTextField: UITextField = {
+	lazy var passwordTextField: UITextField = {
 		let tf = UITextField()
 		tf.placeholder = "Min 8 symbols"
 		tf.font = UIFont.boldSystemFont(ofSize: 24)
-		
-		let button = UIButton()
-		button.createButton(title: "Forgot", titleColor: Colors.projectBlue, fontType: "bold", fontSize: 12, background: nil, cornerRadius: nil)
-		button.addTarget(self, action: #selector(forgotPassword), for: .touchUpInside)
-		button.sizeToFit()
-		button.frame.origin.y = tf.frame.height / 2 - button.frame.height / 2
-		tf.rightViewMode = .always
-		tf.rightView = button
+		tf.delegate = self
 		return tf
 	}()
 	let loginButton: UIButton = {
 		let button = UIButton()
-		button.createButton(title: "Login", titleColor: .white, fontType: "bold", fontSize: 18, background: Colors.projectBlue, cornerRadius: 6)
+		button.createButton(title: "Sign Up", titleColor: .white, fontType: "bold", fontSize: 18, background: Colors.projectBlue, cornerRadius: 6)
+		button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
 		return button
 	}()
 	let signUpButton: UIButton = {
 		let button = UIButton()
-		button.createButton(title: "Sign Up", titleColor: UIColor.rgb(red: 111, green: 111, blue: 111), fontType: "normal", fontSize: 16, background: nil, cornerRadius: nil)
-		button.addTarget(self, action: #selector(goSignUp), for: .touchUpInside)
+		button.createButton(title: "Login", titleColor: UIColor.rgb(red: 111, green: 111, blue: 111), fontType: "normal", fontSize: 16, background: nil, cornerRadius: nil)
+		button.addTarget(self, action: #selector(goLogin), for: .touchUpInside)
 		button.sizeToFit()
 		return button
 	}()
 	
-	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		self.emailTextField.resignFirstResponder()
+		self.usernameTextField.resignFirstResponder()
+		self.passwordTextField.resignFirstResponder()
+		return false
+	}
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		self.view.endEditing(true)
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .white
@@ -103,11 +107,27 @@ class SignUpController: UIViewController {
 		navigationController?.isNavigationBarHidden = false
 	}
 	
-	@objc func forgotPassword(){
-		print("Handle reset password")
+	@objc func handleSignUp(){
+		guard let email = emailTextField.text, email.characters.count > 0 else {return}
+		guard let username = usernameTextField.text, username.characters.count > 0 else {return}
+		guard let password = passwordTextField.text, password.characters.count > 0  else {return}
+		AuthService.instance.registerUser(withEmail: email, andUsername: username, andPassword: password) { (success, err) in
+			if success {
+				AuthService.instance.loginUser(withEmail: email, andPassword: password, completion: { (success, loginErr) in
+					if success {
+						self.dismiss(animated: true, completion: nil)
+						print("alright mate alright")
+					}else {
+						print(loginErr?.localizedDescription)
+					}
+				})
+			}else {
+				print("Hata: \(String(describing: err?.localizedDescription))")
+			}
+		}
 	}
-	@objc func goSignUp(){
-		print("Handle go sign up")
+	@objc func goLogin(){
+		self.navigationController?.popViewController(animated: true)
 	}
 	
 	

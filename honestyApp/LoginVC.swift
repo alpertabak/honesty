@@ -48,6 +48,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
 	let loginButton: UIButton = {
 		let button = UIButton()
 		button.createButton(title: "Login", titleColor: .white, fontType: "bold", fontSize: 18, background: Colors.projectBlue, cornerRadius: 6)
+		button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
 		return button
 	}()
 	let signUpButton: UIButton = {
@@ -92,9 +93,19 @@ class LoginController: UIViewController, UITextFieldDelegate {
 		super.viewWillAppear(animated)
 		navigationController?.isNavigationBarHidden = true
 	}
-	
+	@objc func handleLogin(){
+		guard let email = emailTextField.text, email.characters.count > 0 else {return}
+		guard let password = passwordTextField.text, password.characters.count > 0 else {return}
+		AuthService.instance.loginUser(withEmail: email, andPassword: password) { (success, err) in
+			if success {
+				self.dismiss(animated: true, completion: nil)
+			}else {
+				print(err?.localizedDescription)
+			}
+		}
+	}
 	@objc func forgotPassword(){
-		print("Handle reset password")
+		print("forgot password")
 	}
 	@objc func goSignUp(){
 		navigationController?.pushViewController(SignUpController(), animated: true)

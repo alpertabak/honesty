@@ -18,6 +18,7 @@
 		211381EF1F7249EC000200B9 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381EE1F7249EC000200B9 /* SignupVC.swift */; };
 		211381F81F724E57000200B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381D01F7247FE000200B9 /* AppDelegate.swift */; };
 		211381F91F724E61000200B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211381F71F724E22000200B9 /* GoogleService-Info.plist */; };
+		211381FB1F72541C000200B9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381FA1F72541C000200B9 /* MainController.swift */; };
 		CB36F01EB824322CAD197C31 /* Pods_honestyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D541D6EC5E7CBB02446AF77C /* Pods_honestyApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		211381EC1F7249E3000200B9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		211381EE1F7249EC000200B9 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		211381F71F724E22000200B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		211381FA1F72541C000200B9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		7453F03A907B06A61591FB02 /* Pods-honestyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-honestyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-honestyApp/Pods-honestyApp.release.xcconfig"; sourceTree = "<group>"; };
 		94A79C4A9E07184228548D97 /* Pods-honestyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-honestyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-honestyApp/Pods-honestyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D541D6EC5E7CBB02446AF77C /* Pods_honestyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_honestyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				211381D91F7247FE000200B9 /* LaunchScreen.storyboard */,
 				211381DC1F7247FE000200B9 /* Info.plist */,
 				211381F71F724E22000200B9 /* GoogleService-Info.plist */,
+				211381FA1F72541C000200B9 /* MainController.swift */,
 			);
 			path = honestyApp;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				211381EF1F7249EC000200B9 /* SignupVC.swift in Sources */,
 				211381D31F7247FE000200B9 /* ViewController.swift in Sources */,
 				211381ED1F7249E3000200B9 /* DataService.swift in Sources */,
+				211381FB1F72541C000200B9 /* MainController.swift in Sources */,
 				211381E81F7249B2000200B9 /* Colors.swift in Sources */,
 				211381EB1F7249D8000200B9 /* AuthService.swift in Sources */,
 				211381E31F72496F000200B9 /* LoginVC.swift in Sources */,
