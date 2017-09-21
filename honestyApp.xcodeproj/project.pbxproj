@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		211381D31F7247FE000200B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381D21F7247FE000200B9 /* ViewController.swift */; };
 		211381D81F7247FE000200B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211381D71F7247FE000200B9 /* Assets.xcassets */; };
 		211381DB1F7247FE000200B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 211381D91F7247FE000200B9 /* LaunchScreen.storyboard */; };
 		211381E31F72496F000200B9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381E21F72496F000200B9 /* LoginVC.swift */; };
@@ -19,13 +18,19 @@
 		211381F81F724E57000200B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381D01F7247FE000200B9 /* AppDelegate.swift */; };
 		211381F91F724E61000200B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211381F71F724E22000200B9 /* GoogleService-Info.plist */; };
 		211381FB1F72541C000200B9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381FA1F72541C000200B9 /* MainController.swift */; };
+		211381FD1F72A9E2000200B9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381FC1F72A9E2000200B9 /* UserProfile.swift */; };
+		211381FF1F733923000200B9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211381FE1F733923000200B9 /* SearchController.swift */; };
+		211382021F733B29000200B9 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211382011F733B29000200B9 /* SearchCell.swift */; };
+		211382051F734684000200B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211382041F734684000200B9 /* User.swift */; };
+		211382081F73F705000200B9 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211382071F73F705000200B9 /* HomeController.swift */; };
+		2113820A1F73FBBE000200B9 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211382091F73FBBE000200B9 /* HomeCell.swift */; };
+		2113820C1F73FCF1000200B9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113820B1F73FCF1000200B9 /* Message.swift */; };
 		CB36F01EB824322CAD197C31 /* Pods_honestyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D541D6EC5E7CBB02446AF77C /* Pods_honestyApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		211381CD1F7247FE000200B9 /* honestyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = honestyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211381D01F7247FE000200B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		211381D21F7247FE000200B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		211381D71F7247FE000200B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211381DA1F7247FE000200B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		211381DC1F7247FE000200B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +42,13 @@
 		211381EE1F7249EC000200B9 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		211381F71F724E22000200B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		211381FA1F72541C000200B9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		211381FC1F72A9E2000200B9 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		211381FE1F733923000200B9 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		211382011F733B29000200B9 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		211382041F734684000200B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		211382071F73F705000200B9 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		211382091F73FBBE000200B9 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		2113820B1F73FCF1000200B9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7453F03A907B06A61591FB02 /* Pods-honestyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-honestyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-honestyApp/Pods-honestyApp.release.xcconfig"; sourceTree = "<group>"; };
 		94A79C4A9E07184228548D97 /* Pods-honestyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-honestyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-honestyApp/Pods-honestyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D541D6EC5E7CBB02446AF77C /* Pods_honestyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_honestyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,17 +87,20 @@
 		211381CF1F7247FE000200B9 /* honestyApp */ = {
 			isa = PBXGroup;
 			children = (
+				211382061F73F6FB000200B9 /* Home */,
+				211382031F734677000200B9 /* Helpers */,
+				211382001F733B1D000200B9 /* Search */,
 				211381E91F7249B8000200B9 /* Services */,
 				211381E41F724987000200B9 /* Utils */,
 				211381D01F7247FE000200B9 /* AppDelegate.swift */,
 				211381E21F72496F000200B9 /* LoginVC.swift */,
-				211381D21F7247FE000200B9 /* ViewController.swift */,
+				211381FA1F72541C000200B9 /* MainController.swift */,
+				211381FC1F72A9E2000200B9 /* UserProfile.swift */,
 				211381EE1F7249EC000200B9 /* SignupVC.swift */,
 				211381D71F7247FE000200B9 /* Assets.xcassets */,
 				211381D91F7247FE000200B9 /* LaunchScreen.storyboard */,
 				211381DC1F7247FE000200B9 /* Info.plist */,
 				211381F71F724E22000200B9 /* GoogleService-Info.plist */,
-				211381FA1F72541C000200B9 /* MainController.swift */,
 			);
 			path = honestyApp;
 			sourceTree = "<group>";
@@ -106,6 +121,33 @@
 				211381EC1F7249E3000200B9 /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		211382001F733B1D000200B9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				211381FE1F733923000200B9 /* SearchController.swift */,
+				211382011F733B29000200B9 /* SearchCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		211382031F734677000200B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				211382041F734684000200B9 /* User.swift */,
+				2113820B1F73FCF1000200B9 /* Message.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		211382061F73F6FB000200B9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				211382071F73F705000200B9 /* HomeController.swift */,
+				211382091F73FBBE000200B9 /* HomeCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4DC614531D27FF478A42FFD1 /* Frameworks */ = {
@@ -248,14 +290,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				211381F81F724E57000200B9 /* AppDelegate.swift in Sources */,
+				211382021F733B29000200B9 /* SearchCell.swift in Sources */,
+				211381FF1F733923000200B9 /* SearchController.swift in Sources */,
 				211381EF1F7249EC000200B9 /* SignupVC.swift in Sources */,
-				211381D31F7247FE000200B9 /* ViewController.swift in Sources */,
+				211382051F734684000200B9 /* User.swift in Sources */,
 				211381ED1F7249E3000200B9 /* DataService.swift in Sources */,
+				211382081F73F705000200B9 /* HomeController.swift in Sources */,
 				211381FB1F72541C000200B9 /* MainController.swift in Sources */,
+				2113820A1F73FBBE000200B9 /* HomeCell.swift in Sources */,
 				211381E81F7249B2000200B9 /* Colors.swift in Sources */,
 				211381EB1F7249D8000200B9 /* AuthService.swift in Sources */,
 				211381E31F72496F000200B9 /* LoginVC.swift in Sources */,
+				2113820C1F73FCF1000200B9 /* Message.swift in Sources */,
 				211381E61F7249A4000200B9 /* Extensions.swift in Sources */,
+				211381FD1F72A9E2000200B9 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

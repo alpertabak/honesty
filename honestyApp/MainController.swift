@@ -8,14 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-class MainController: UIViewController {
-	let logoutButton: UIButton = {
-		let button = UIButton()
-		button.createButton(title: "Logout", titleColor: Colors.projectBlue, fontType: "bold", fontSize: 18, background: nil, cornerRadius: nil)
-		button.addTarget(self, action: #selector(logout), for: .touchUpInside)
-		button.sizeToFit()
-		return button
-	}()
+class MainController: UITabBarController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .white
@@ -29,19 +22,23 @@ class MainController: UIViewController {
 			}else {
 				print("kullanıcımız var dostum")
 			}
-		}
-		view.addSubview(logoutButton)
-		logoutButton.frame = CGRect(x: view.frame.width - logoutButton.frame.width - 20, y: 80, width: logoutButton.frame.size.width, height: logoutButton.frame.size.height)
+		
 		print("Welcome on aboard")
+		
+		let homeVC = HomeController()
+		let userProfileVC = UserProfileController()
+		let searchVC = SearchController(collectionViewLayout: UICollectionViewFlowLayout())
+		homeVC.tabBarItem.image = #imageLiteral(resourceName: "home_unselected")
+		homeVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "home_selected")
+		searchVC.tabBarItem.image = #imageLiteral(resourceName: "search_unselected")
+		searchVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "search_selected")
+		userProfileVC.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
+		userProfileVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
+		let homeController = UINavigationController(rootViewController: homeVC)
+		let searchController = UINavigationController(rootViewController: searchVC)
+		let navController = UINavigationController(rootViewController: userProfileVC)
+		self.tabBar.tintColor = .black
+		self.viewControllers = [homeController,navController,searchController]
 	}
-	@objc func logout(){
-		do{
-			try Auth.auth().signOut()
-			let loginVC = UINavigationController(rootViewController: LoginController())
-			self.present(loginVC, animated: true, completion: nil)
-			return
-		}catch{
-			print("Olmadı")
-		}
 	}
 }

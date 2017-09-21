@@ -62,7 +62,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		self.emailTextField.resignFirstResponder()
 		self.passwordTextField.resignFirstResponder()
-		forgotPassword()
+		handleLogin()
 		return false
 	}
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
