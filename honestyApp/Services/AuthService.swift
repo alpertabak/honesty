@@ -19,7 +19,7 @@ class AuthService {
 				completion(false, err)
 				return
 			}
-			let userData = ["email":user.email,"username": username]
+			let userData = ["email":user.email,"username": username.lowercased()]
 			DB.instance.createDBUser(uid: user.uid, userData: userData)
 			completion(true, nil)
 		}

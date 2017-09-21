@@ -19,12 +19,7 @@ class MainController: UITabBarController {
 					self.present(loginVC, animated: true, completion: nil)
 				}
 				return
-			}else {
-				print("kullanıcımız var dostum")
 			}
-		
-		print("Welcome on aboard")
-		
 		let homeVC = HomeController()
 		let userProfileVC = UserProfileController()
 		let searchVC = SearchController(collectionViewLayout: UICollectionViewFlowLayout())

@@ -38,7 +38,6 @@ class HomeController: UITableViewController {
 					self.userMessages.append(send)
 					
  				}
-				print(self.userMessages)
 				DispatchQueue.main.async {
 					self.tableView.reloadData()
 				}

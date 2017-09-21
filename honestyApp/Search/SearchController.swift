@@ -77,7 +77,6 @@ class SearchController: UICollectionViewController, UICollectionViewDelegateFlow
 				self.present(alertView, animated: true, completion: nil)
 				self.users.removeAll()
 			}
-			print(self.users)
 			DispatchQueue.main.async {
 				self.collectionView?.reloadData()
 			}

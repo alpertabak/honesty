@@ -74,7 +74,6 @@ class UserProfileController: UIViewController, UITextViewDelegate {
 		sendButton.isEnabled = false
 		userProfileHeader.addSubview(logoutButton)
 		setupUI()
-		print("Welcome on aboard")
 		if userId == Auth.auth().currentUser?.uid || userId == nil   {
 			logoutButton.anchor(top: userProfileHeader.topAnchor, left: nil, bottom: nil, right: userProfileHeader.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, height: 0, width: 0)
 		}
@@ -105,11 +104,9 @@ class UserProfileController: UIViewController, UITextViewDelegate {
 	}
 	func textViewDidEndEditing(_ textView: UITextView) {
 		if textView.text == "Share your thoughts" || textView.text.characters.count < 16 {
-			print("change placeholder here")
 			sendButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
 			sendButton.isEnabled = false
 		}else {
-			print("placeholder is already changed and characters are greater than 16")
 			sendButton.isEnabled = true
 			sendButton.backgroundColor = Colors.projectBlue
 		}
@@ -118,14 +115,12 @@ class UserProfileController: UIViewController, UITextViewDelegate {
 		self.view.endEditing(true)
 	}
 	@objc func sendMessage(){
-		print("button pressed")
 		guard let message = messageTextView.text, message.characters.count > 16 else {return}
 		guard let currentUser = Auth.auth().currentUser?.uid else {return}
 		guard let uid = self.user?.uid else {return}
 		let messageData = ["senderID": currentUser, "text": message]
 		DB.instance.sendMessage(uid: uid, messageData: messageData) { (success, err) in
 			if success {
-				print("oldu")
 				self.messageTextView.text = ""
 				self.sendButton.backgroundColor = UIColor.rgb(red: 149, green: 204, blue: 244)
 				self.sendButton.isEnabled = false
@@ -160,14 +155,13 @@ class UserProfileController: UIViewController, UITextViewDelegate {
 		}
 	}
 	@objc func logoutHandle(){
-		print("tıkladık ya amk")
 		do{
 			try Auth.auth().signOut()
 			let loginVC = UINavigationController(rootViewController: LoginController())
 			self.present(loginVC, animated: true, completion: nil)
 			return
 		}catch{
-			print("Olmadı")
+			print("Something went wrong")
 		}
 	}
 }
