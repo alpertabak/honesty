@@ -100,7 +100,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
 			if success {
 				self.dismiss(animated: true, completion: nil)
 			}else {
-				print(err?.localizedDescription)
+				print(err?.localizedDescription ?? "")
 			}
 		}
 	}

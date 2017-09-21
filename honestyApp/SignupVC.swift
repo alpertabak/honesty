@@ -118,7 +118,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
 						self.dismiss(animated: true, completion: nil)
 						print("alright mate alright")
 					}else {
-						print(loginErr?.localizedDescription)
+						print(loginErr?.localizedDescription ?? "")
 					}
 				})
 			}else {

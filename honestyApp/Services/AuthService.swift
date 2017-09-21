@@ -20,7 +20,7 @@ class AuthService {
 				return
 			}
 			let userData = ["email":user.email,"username": username.lowercased()]
-			DB.instance.createDBUser(uid: user.uid, userData: userData)
+			DB.instance.createDBUser(uid: user.uid, userData: userData as Any as! Dictionary<String, Any>)
 			completion(true, nil)
 		}
 		
