@@ -75,7 +75,7 @@ class UserProfileController: UIViewController, UITextViewDelegate {
 		userProfileHeader.addSubview(logoutButton)
 		setupUI()
 		print("Welcome on aboard")
-		if userId == Auth.auth().currentUser?.uid {
+		if userId == Auth.auth().currentUser?.uid || userId == nil   {
 			logoutButton.anchor(top: userProfileHeader.topAnchor, left: nil, bottom: nil, right: userProfileHeader.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, height: 0, width: 0)
 		}
 		fetchUser()
